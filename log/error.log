@@ -1,0 +1,332 @@
+2025-03-23 18:32:08 [ERROR] [Errno 98] Address already in use
+2025-03-23 18:50:19 [ERROR] Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/fastapi/routing.py", line 346, in app
+    raise validation_error
+fastapi.exceptions.RequestValidationError: [{'type': 'missing', 'loc': ('query', 'servicer_id'), 'msg': 'Field required', 'input': None}]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 73, in wrapped_app
+    response = await handler(conn, exc)
+  File "/home/SQ评价量化python后台接口/common/exceptions.py", line 24, in http_exception_handle
+    return respErrorJson(error=err, status_code=err.code, data={'errors': json.loads(exc.json())})
+AttributeError: 'RequestValidationError' object has no attribute 'json'
+2025-03-23 18:50:56 [ERROR] Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/home/SQ评价量化python后台接口/apps/sq/views.py", line 361, in getSentimentInfo
+    build_wordcloud(servicer_id,all_user_input)
+  File "/home/SQ评价量化python后台接口/apps/sq/views.py", line 200, in build_wordcloud
+    wordcloud.generate(words)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/wordcloud/wordcloud.py", line 642, in generate
+    return self.generate_from_text(text)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/wordcloud/wordcloud.py", line 624, in generate_from_text
+    self.generate_from_frequencies(words)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/wordcloud/wordcloud.py", line 506, in generate_from_frequencies
+    font = ImageFont.truetype(self.font_path, font_size)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/PIL/ImageFont.py", line 834, in truetype
+    return freetype(font)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/PIL/ImageFont.py", line 831, in freetype
+    return FreeTypeFont(font, size, index, encoding, layout_engine)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/PIL/ImageFont.py", line 257, in __init__
+    self.font = core.getfont(
+OSError: cannot open resource
+2025-03-23 18:51:37 [ERROR] Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/home/SQ评价量化python后台接口/apps/sq/views.py", line 361, in getSentimentInfo
+    build_wordcloud(servicer_id,all_user_input)
+  File "/home/SQ评价量化python后台接口/apps/sq/views.py", line 200, in build_wordcloud
+    wordcloud.generate(words)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/wordcloud/wordcloud.py", line 642, in generate
+    return self.generate_from_text(text)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/wordcloud/wordcloud.py", line 624, in generate_from_text
+    self.generate_from_frequencies(words)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/wordcloud/wordcloud.py", line 506, in generate_from_frequencies
+    font = ImageFont.truetype(self.font_path, font_size)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/PIL/ImageFont.py", line 834, in truetype
+    return freetype(font)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/PIL/ImageFont.py", line 831, in freetype
+    return FreeTypeFont(font, size, index, encoding, layout_engine)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/PIL/ImageFont.py", line 257, in __init__
+    self.font = core.getfont(
+OSError: cannot open resource
+2025-03-23 18:51:45 [ERROR] Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/home/SQ评价量化python后台接口/apps/sq/views.py", line 361, in getSentimentInfo
+    build_wordcloud(servicer_id,all_user_input)
+  File "/home/SQ评价量化python后台接口/apps/sq/views.py", line 200, in build_wordcloud
+    wordcloud.generate(words)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/wordcloud/wordcloud.py", line 642, in generate
+    return self.generate_from_text(text)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/wordcloud/wordcloud.py", line 624, in generate_from_text
+    self.generate_from_frequencies(words)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/wordcloud/wordcloud.py", line 506, in generate_from_frequencies
+    font = ImageFont.truetype(self.font_path, font_size)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/PIL/ImageFont.py", line 834, in truetype
+    return freetype(font)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/PIL/ImageFont.py", line 831, in freetype
+    return FreeTypeFont(font, size, index, encoding, layout_engine)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/PIL/ImageFont.py", line 257, in __init__
+    self.font = core.getfont(
+OSError: cannot open resource
+2025-03-23 18:55:28 [ERROR] Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/home/SQ评价量化python后台接口/apps/sq/views.py", line 361, in getSentimentInfo
+    build_wordcloud(servicer_id,all_user_input)
+  File "/home/SQ评价量化python后台接口/apps/sq/views.py", line 200, in build_wordcloud
+    wordcloud.generate(words)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/wordcloud/wordcloud.py", line 642, in generate
+    return self.generate_from_text(text)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/wordcloud/wordcloud.py", line 624, in generate_from_text
+    self.generate_from_frequencies(words)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/wordcloud/wordcloud.py", line 506, in generate_from_frequencies
+    font = ImageFont.truetype(self.font_path, font_size)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/PIL/ImageFont.py", line 834, in truetype
+    return freetype(font)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/PIL/ImageFont.py", line 831, in freetype
+    return FreeTypeFont(font, size, index, encoding, layout_engine)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/PIL/ImageFont.py", line 257, in __init__
+    self.font = core.getfont(
+OSError: cannot open resource
+2025-03-23 18:57:17 [ERROR] Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/home/SQ评价量化python后台接口/apps/sq/views.py", line 361, in getSentimentInfo
+    build_wordcloud(servicer_id,all_user_input)
+  File "/home/SQ评价量化python后台接口/apps/sq/views.py", line 200, in build_wordcloud
+    wordcloud.generate(words)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/wordcloud/wordcloud.py", line 642, in generate
+    return self.generate_from_text(text)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/wordcloud/wordcloud.py", line 624, in generate_from_text
+    self.generate_from_frequencies(words)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/wordcloud/wordcloud.py", line 506, in generate_from_frequencies
+    font = ImageFont.truetype(self.font_path, font_size)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/PIL/ImageFont.py", line 834, in truetype
+    return freetype(font)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/PIL/ImageFont.py", line 831, in freetype
+    return FreeTypeFont(font, size, index, encoding, layout_engine)
+  File "/root/miniconda3/envs/sq/lib/python3.10/site-packages/PIL/ImageFont.py", line 257, in __init__
+    self.font = core.getfont(
+OSError: cannot open resource
