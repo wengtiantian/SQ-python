@@ -69,7 +69,7 @@ sq-python/
 │   ├── celery_tasks.py                 # 任务定义文件
 │   └── celeryconfig.py                 # Celery配置文件
 │
-├── alice_color.png                     # 项目Logo或展示图片
+├── alice_color.png                     # 词云图模板
 ├── dir_tree.py                         # 项目目录结构生成脚本
 ├── main.py                             # 项目入口文件（FastAPI启动文件）
 ├── nohup.out                           # 后台运行日志输出文件
