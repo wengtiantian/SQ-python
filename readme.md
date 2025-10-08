@@ -1,3 +1,5 @@
+# files sturct
+```
 sq-python/
 ├── apps/                               # 各业务模块目录
 │   ├── sq/                             # 服务质量评价sq模块
@@ -73,3 +75,4 @@ sq-python/
 ├── nohup.out                           # 后台运行日志输出文件
 ├── requirements.txt                    # Python依赖包列表
 └── simhei.ttf                          # 中文字体文件（用于生成图表中文字显示）
+```
