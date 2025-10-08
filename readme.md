@@ -1,4 +1,4 @@
-# files sturct
+# SQ files sturct
 ```
 sq-python/
 ├── apps/                               # 各业务模块目录
